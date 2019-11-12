@@ -3,7 +3,7 @@
 Kubernetes Helm Charts
 ======================
 
-You can use the |cos| Helm charts to deploy |cp| services on Kubernetes for development, test, and proof of concept environments.
+You can use the Helm charts to deploy |cp| services on Kubernetes for development, test, and proof of concept environments.
 
 .. important:: The |cp| Helm charts are in developer preview and are not supported for production use.
 
@@ -70,7 +70,7 @@ installation.
       kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
       helm init --service-account tiller --upgrade
 
-Run Confluent Platform
+Run |cp|
 ----------------------
 
 Follow these steps to run |cp|.
@@ -104,7 +104,7 @@ Clone the Confluent Helm Chart repo
 
 .. code:: sh
 
-      > helm repo add confluentinc https://raw.githubusercontent.com/confluentinc/cp-helm-charts/master
+      > helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/
     "confluentinc" has been added to your repositories
 
       > helm repo update
@@ -200,7 +200,7 @@ Manual Test
 
    ::
 
-   git clone https://github.com/confluentinc/cp-helm-charts.git
+    git clone https://github.com/confluentinc/cp-helm-charts.git
 
 1. Deploy a |zk| client pod.
 
@@ -337,7 +337,7 @@ Exporter is installed as a sidecar container along with all Pods.
 2. Add Prometheus as Data Source in Grafana, url should be something
    like: ``http://illmannered-marmot-prometheus-server:9090``
 
-3. Import dashboard under `grafana-dashboard <grafana-dashboard>`__ into
+3. Import dashboard under `grafana-dashboard <https://github.com/confluentinc/cp-helm-charts/blob/master/grafana-dashboard/confluent-open-source-grafana-dashboard.json>`__ into
    Grafana |Kafka Dashboard|
 
    .. figure:: ../screenshots/zookeeper.png
